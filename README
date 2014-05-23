@@ -1,0 +1,5 @@
+mergepdfs is a simple bash script making use of ghostscript for
+merging multiple PDF files into a single output file.  I could never
+remember the commands so I wrote this script.
+
+mergepdfs is in the public domain, use it for whatever.

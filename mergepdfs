@@ -1,0 +1,18 @@
+#!/bin/bash
+if [[ $# -le 1 ]] ; then
+    echo "Usage: mergepdfs.sh <inputfiles> <outfile.pdf>"
+    exit 1;
+else
+    declare -a args;
+    args=( $@ );
+    declare -a inputfiles;
+    for((i=0;i<$#-1;i=i+1)); do
+	inputfiles[i]=${args[i]};
+    done;
+    inputfilesstr="";
+    for((i=0;i<${#inputfiles[@]};i=i+1)); do
+	inputfilesstr="${inputfilesstr}\"${inputfiles[i]}\"";
+    done;
+    outputfile=${args[$(($#-1))]};
+    eval gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=${outputfile} -dBATCH ${inputfiles[@]}
+fi;
