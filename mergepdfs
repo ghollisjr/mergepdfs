@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $# -le 1 ]] ; then
-    echo "Usage: mergepdfs.sh <inputfiles> <outfile.pdf>"
+    echo "Usage: mergepdfs <inputfiles> <outfile.pdf>"
     exit 1;
 else
     declare -a args;
