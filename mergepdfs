@@ -14,5 +14,5 @@ else
 	inputfilesstr="${inputfilesstr}\"${inputfiles[i]}\"";
     done;
     outputfile=${args[$(($#-1))]};
-    eval gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=${outputfile} -dBATCH ${inputfiles[@]}
+    gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=${outputfile} -dBATCH ${inputfiles[@]}
 fi;
